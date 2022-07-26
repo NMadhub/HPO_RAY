@@ -3,6 +3,7 @@
 To run these examples, you will need to install the following:
 ```
 pip3 install "ray[tune]" torch torchvision pytorch-lightning
+pip3 install ray_lightning
 ```
 
 For training using PytorchLightning on single GPU , run:
@@ -43,8 +44,9 @@ If you have 8 GPUs, this will run 8 trials at once.
 If you have 4 CPUs on your machine and 1 GPU, this will run 1 trial at a time.
 ```tune.run(trainable, num_samples=10, resources_per_trial={"cpu": 2, "gpu": 1})```
 
+**Tip:** Use ```htop``` command to visualize the effect of ray on your codes 
 
-More resources:
+### More resources:
 1.) Local on Premise Cluster setup using [RayCluster](https://docs.ray.io/en/master/cluster/cloud.html#local-on-premise-cluster-list-of-nodes)
 
 2.) Deploying on [Slurm](https://docs.ray.io/en/latest/cluster/slurm.html) 
